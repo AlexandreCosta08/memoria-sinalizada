@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Metadados básicos de codificação e responsividade da aplicação -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da memória</title>
+    <!-- Vínculo com a folha de estilos externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ================= TELA INICIAL / MENU PRINCIPAL ================= -->
+    <div id="tela_inicial" class="tela ativa">
+        <h1>Jogo da memória</h1>
+        <div class="caixa1">
+            <div id="jogar" onclick="jogar()" class="menu">▶ Jogar</div>
+            <div id="niveis" onclick="niveis()" class="menu">☰ Níveis</div>
+        </div>
+    </div>
+
+    <!-- ================= TELA DE SELEÇÃO DE NÍVEIS ================= -->
+    <div id="tela_niveis" class="tela">
+        <button class="n3" onclick="iniciarNivel(1)">1</button>
+        <button class="n3" onclick="iniciarNivel(2)">2</button>
+        <button class="n3" onclick="iniciarNivel(3)">3</button>
+        <button class="voltar" onclick="voltar()">← Voltar</button>
+    </div>
+
+    <!-- ================= TELA DE EXECUÇÃO DO JOGO ================= -->
+    <div id="tela_jogo" class="tela">
+        <header class="cabecalho">
+            <div class="caixa_jogo">
+                <h2 class="t2_jogo">Bem-vindo ao nível 1</h2>
+                <p class="p2_jogo">Encontre os pares!</p>
+            </div>
+            <button class="voltar" onclick="voltarParaNiveis()">← Voltar</button>
+        </header>
+
+        <main class="principal">
+            <div class="informacoes">
+                <p>Pares encontrados: <span id="pares">0</span></p>
+            </div>
+
+            <!-- Tabuleiro dinâmico onde as cartas são geradas via JavaScript -->
+            <div id="tabuleiro" class="tabuleiro">
+
+            </div>
+        </main>
+    </div>
+    
+    <!-- ================= TELA DE CONCLUSÃO / VITÓRIA DO NÍVEL ================= -->
+    <div id="tela_conclusao" class="tela">
+        <div class="caixa_conclusao">
+            <h2>🎉 Parabéns!</h2>
+            <p>Você concluiu o nível com sucesso!</p>
+            <div class="botoes_conclusao">
+                <button class="menu" onclick="jogarNovamente()">Jogar Novamente</button>
+                <button id="btn_proximo" class="menu" onclick="proximoNivel()">Próximo Nivel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Importação do script principal contendo a lógica do jogo -->
+    <script src="app.js"></script>
+</body>
+</html>
